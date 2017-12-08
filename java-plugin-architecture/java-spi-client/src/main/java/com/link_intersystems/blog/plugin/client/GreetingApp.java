@@ -25,6 +25,13 @@ public class GreetingApp {
 			String greeting = greetingService.greet(person);
 			Class<? extends GreetingService> serviceImplClass = greetingService.getClass();
 			String simpleServiceName = serviceImplClass.getSimpleName();
+			System.out.println(simpleServiceName);
+			if (simpleServiceName.contains("Casual")) {
+				System.out.println("Found Casual Service");
+			}
+			if (simpleServiceName.contains("Formal")) {
+				System.out.println("Found Formal Service");
+			}
 			String msg = MessageFormat.format("Greeting by provider {0}: {1}", simpleServiceName, greeting);
 			System.out.println(msg);
 		}
